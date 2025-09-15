@@ -11,7 +11,7 @@ import utilities.ExcelUtility;
 
 public class LoginTest extends TestNGBase{
 @Test
-public void validusernamevalidpassword() throws IOException {
+public void verifyvalidusernamevalidpassword() throws IOException {
 	String usernameValue =ExcelUtility.getStringData(1, 0, "LoginPage");
 	String passwordValue =ExcelUtility.getStringData(1, 1, "LoginPage");
 	WebElement username = driver.findElement(By.xpath("//input[@class='form-control' and @name='username']"));
@@ -22,7 +22,7 @@ public void validusernamevalidpassword() throws IOException {
 	signin.click();
 }
 @Test
-public void validusernameinvalidpassword() throws IOException{
+public void verifyvalidusernameinvalidpassword() throws IOException{
 	String usernameValue =ExcelUtility.getStringData(2, 0, "LoginPage");
 	String passwordValue =ExcelUtility.getStringData(2, 1, "LoginPage");
 	WebElement username = driver.findElement(By.xpath("//input[@class='form-control' and @name='username']"));
@@ -33,7 +33,7 @@ public void validusernameinvalidpassword() throws IOException{
 	signin.click();
 }
 @Test
-public void invalidusernamevalidpassword() throws IOException{
+public void verifyinvalidusernamevalidpassword() throws IOException{
 	String usernameValue =ExcelUtility.getStringData(3, 0, "LoginPage");
 	String passwordValue =ExcelUtility.getStringData(3, 1, "LoginPage");
 	WebElement username = driver.findElement(By.xpath("//input[@class='form-control' and @name='username']"));
@@ -44,7 +44,7 @@ public void invalidusernamevalidpassword() throws IOException{
 	signin.click();
 }
 @Test
-public void invalidusernameinvalidpassword() throws IOException{
+public void verifyinvalidusernameinvalidpassword() throws IOException{
 	String usernameValue =ExcelUtility.getStringData(4, 0, "LoginPage");
 	String passwordValue =ExcelUtility.getStringData(4, 1, "LoginPage");
 	WebElement username = driver.findElement(By.xpath("//input[@class='form-control' and @name='username']"));

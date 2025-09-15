@@ -14,6 +14,7 @@ public class TestNGBase {
 	@BeforeMethod
 	public void browserInitialization() {
 		// driver = new ChromeDriver(); //webdriver interface chromedriver class driver ref variable
+		
 		ChromeOptions options = new ChromeOptions();
 		Map<String,Object> prefs=new HashMap<>();
 		prefs.put("profile.password_manager_leak_detection", false);
