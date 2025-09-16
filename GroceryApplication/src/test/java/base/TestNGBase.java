@@ -20,7 +20,7 @@ public class TestNGBase {
 		prefs.put("profile.password_manager_leak_detection", false);
 		options.setExperimentalOption("prefs", prefs);
 		driver=new ChromeDriver(options);
-	driver.get( "https://groceryapp.uniqassosiates.com/admin/login");//to launch url use get method
+	driver.get("https://groceryapp.uniqassosiates.com/admin/login");//to launch url use get method
 		driver.manage().window().maximize();//maximize window
 		//driver.close(); //to close the current window
 		//driver.quit();// to close the complete window
