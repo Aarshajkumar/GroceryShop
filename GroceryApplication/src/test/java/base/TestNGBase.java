@@ -1,13 +1,17 @@
 package base;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+
+import utilities.ScreenshotUtility;
 
 public class TestNGBase {
 	public WebDriver driver ;
@@ -31,6 +35,18 @@ public class TestNGBase {
 		driver.close();
 		driver.quit();
 	
+	}
+  //ethelum fail aya ellam interupt avan chance ondu
+  @AfterMethod(alwaysRun = true)//terminate avunenu mune exevute cheyna vendi anu always 
+	public void driverQuit(ITestResult iTestResult) throws IOException
+	{
+		if(iTestResult.getStatus()==ITestResult.FAILURE)//any fail then screenshortina get cheyuna
+		{
+			ScreenshotUtility screenShot=new ScreenshotUtility();
+			screenShot.getScreenshot(driver, iTestResult.getName());
+		}
+		driver.quit();
+
 	}
 	
 }
