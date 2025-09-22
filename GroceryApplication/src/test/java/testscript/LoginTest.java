@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -22,6 +23,9 @@ public void verifyvalidusernamevalidpassword() throws IOException {
 	password.sendKeys(passwordValue);
 	WebElement signin = driver.findElement(By.xpath("//button[text() ='Sign In']"));
 	signin.click();
+	String expected = "https://groceryapp.uniqassosiates.com/admin";
+	String actual = driver.getCurrentUrl();
+	Assert.assertEquals(actual, expected,"Login is not successfull with valid credentials");
 }
 @Test(priority = 2, description = "verify login with validusername and invalidpw")
 public void verifyvalidusernameinvalidpassword() throws IOException{
@@ -33,6 +37,9 @@ public void verifyvalidusernameinvalidpassword() throws IOException{
 	password.sendKeys(passwordValue);
 	WebElement signin = driver.findElement(By.xpath("//button[text() ='Sign In']"));
 	signin.click();
+	String expected = "https://groceryapp.uniqassosiates.com/admin/login";
+	String actual = driver.getCurrentUrl();
+	Assert.assertEquals(actual, expected,"Login was successfull with validusername and invalidpassword");
 }
 @Test(priority = 3, description = "verify login with invalid usename and valid pw")
 public void verifyinvalidusernamevalidpassword() throws IOException{
@@ -44,6 +51,9 @@ public void verifyinvalidusernamevalidpassword() throws IOException{
 	password.sendKeys(passwordValue);
 	WebElement signin = driver.findElement(By.xpath("//button[text() ='Sign In']"));
 	signin.click();
+	String expected = "https://groceryapp.uniqassosiates.com/admin/login";
+	String actual = driver.getCurrentUrl();
+	Assert.assertEquals(actual, expected,"Login was successfull with invalidusername validpassword");
 }
 @Test(priority = 4,description = "verify login with invalid credentials",dataProvider = "loginProvider")
 public void verifyinvalidusernameinvalidpassword(String usernameValue,String passwordValue ) throws IOException{
@@ -55,6 +65,9 @@ public void verifyinvalidusernameinvalidpassword(String usernameValue,String pas
 	password.sendKeys(passwordValue);
 	WebElement signin = driver.findElement(By.xpath("//button[text() ='Sign In']"));
 	signin.click();
+	String expected = "https://groceryapp.uniqassosiates.com/admin/login";
+	String actual = driver.getCurrentUrl();
+	Assert.assertEquals(actual, expected,"Login was successfull with invalidusername invalidpassword");
 }
 @DataProvider(name="loginProvider")//to test 3 set of data, set ana name for dataprovided
 public Object[][] getDataFromDataProvider() throws IOException
