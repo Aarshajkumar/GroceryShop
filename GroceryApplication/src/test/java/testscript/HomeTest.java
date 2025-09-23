@@ -27,7 +27,9 @@ public class HomeTest extends TestNGBase {
 		loginclick.click();
 		WebElement logoutclick = driver.findElement(By.xpath("//i[@class='ace-icon fa fa-power-off']"));
 		logoutclick.click();
-		
+		String expected = "https://groceryapp.uniqassosiates.com/admin/login";
+		String actual = driver.getCurrentUrl();
+		Assert.assertEquals(actual, expected,"Logout is not successfull");
 		
 		
 	}

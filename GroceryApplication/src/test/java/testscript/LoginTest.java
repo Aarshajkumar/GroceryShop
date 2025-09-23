@@ -9,6 +9,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import base.TestNGBase;
+import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginTest extends TestNGBase{
@@ -17,12 +18,10 @@ public class LoginTest extends TestNGBase{
 public void verifyvalidusernamevalidpassword() throws IOException {
 	String usernameValue =ExcelUtility.getStringData(1, 0, "LoginPage");
 	String passwordValue =ExcelUtility.getStringData(1, 1, "LoginPage");
-	WebElement username = driver.findElement(By.xpath("//input[@class='form-control' and @name='username']"));
-	username.sendKeys(usernameValue);
-	WebElement password = driver.findElement(By.xpath("//input[@class='form-control' and @name='password']"));
-	password.sendKeys(passwordValue);
-	WebElement signin = driver.findElement(By.xpath("//button[text() ='Sign In']"));
-	signin.click();
+	LoginPage login = new LoginPage(driver);
+	login.enterusername(usernameValue);
+	login.enterpassword(passwordValue);
+	login.clicksignin();
 	String expected = "https://groceryapp.uniqassosiates.com/admin";
 	String actual = driver.getCurrentUrl();
 	Assert.assertEquals(actual, expected,"Login is not successfull with valid credentials");

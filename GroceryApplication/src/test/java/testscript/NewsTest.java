@@ -29,6 +29,10 @@ public void veriftAddnews() throws IOException {
 	textarea.sendKeys("This is a sample news");
 	WebElement savemanage = driver.findElement(By.xpath("//button[@name='create']"));
 	savemanage.click();
+	
+	WebElement newsalert = driver.findElement(By.xpath("//div[@class='alert alert-success alert-dismissible']"));
+	boolean isalertdisplayed = newsalert.isDisplayed();
+	Assert.assertTrue(isalertdisplayed, "News is not added");
 }
 @Test(description ="verify return to home from managenews")
 public void verifyreturntohome() throws IOException {
@@ -53,5 +57,6 @@ public void verifyreturntohome() throws IOException {
 	String expected = "https://groceryapp.uniqassosiates.com/admin/home";
 	String actual = driver.getCurrentUrl();
 	Assert.assertEquals(actual, expected,"The page is not redirecting to the home page.");
+	
 }
 }
