@@ -2,35 +2,35 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-09-24T11:49:53 IST" name="Default suite" finished-at="2025-09-24T11:50:09 IST" duration-ms="15981">
+  <suite started-at="2025-09-24T12:56:36 IST" name="Default suite" finished-at="2025-09-24T12:56:42 IST" duration-ms="6084">
     <groups>
     </groups>
-    <test started-at="2025-09-24T11:49:53 IST" name="Default test" finished-at="2025-09-24T11:50:09 IST" duration-ms="15981">
-      <class name="testscript.AdminTest">
-        <test-method is-config="true" signature="browserInitialization()[pri:0, instance:testscript.AdminTest@1aafa419]" started-at="2025-09-24T11:49:53 IST" name="browserInitialization" finished-at="2025-09-24T11:50:02 IST" duration-ms="8848" status="PASS">
+    <test started-at="2025-09-24T12:56:36 IST" name="Default test" finished-at="2025-09-24T12:56:42 IST" duration-ms="6084">
+      <class name="testscript.HomeTest">
+        <test-method is-config="true" signature="browserInitialization()[pri:0, instance:testscript.HomeTest@2a4fb17b]" started-at="2025-09-24T12:56:36 IST" name="browserInitialization" finished-at="2025-09-24T12:56:39 IST" duration-ms="3288" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserInitialization -->
-        <test-method signature="verifysearch()[pri:0, instance:testscript.AdminTest@1aafa419]" started-at="2025-09-24T11:50:02 IST" name="verifysearch" finished-at="2025-09-24T11:50:08 IST" duration-ms="6975" status="PASS">
+        <test-method signature="verifyLogout()[pri:0, instance:testscript.HomeTest@2a4fb17b]" started-at="2025-09-24T12:56:39 IST" name="verifyLogout" description="verify Logout" finished-at="2025-09-24T12:56:42 IST" duration-ms="2713" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifysearch -->
-        <test-method is-config="true" signature="browserQuitClose()[pri:0, instance:testscript.AdminTest@1aafa419]" started-at="2025-09-24T11:50:09 IST" name="browserQuitClose" finished-at="2025-09-24T11:50:09 IST" duration-ms="5" status="PASS">
+        </test-method> <!-- verifyLogout -->
+        <test-method is-config="true" signature="browserQuitClose()[pri:0, instance:testscript.HomeTest@2a4fb17b]" started-at="2025-09-24T12:56:42 IST" name="browserQuitClose" finished-at="2025-09-24T12:56:42 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserQuitClose -->
-        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscript.AdminTest@1aafa419]" started-at="2025-09-24T11:50:09 IST" name="driverQuit" finished-at="2025-09-24T11:50:09 IST" duration-ms="5" status="PASS">
+        <test-method is-config="true" signature="driverQuit(org.testng.ITestResult)[pri:0, instance:testscript.HomeTest@2a4fb17b]" started-at="2025-09-24T12:56:42 IST" name="driverQuit" finished-at="2025-09-24T12:56:42 IST" duration-ms="6" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifysearch status=SUCCESS method=AdminTest.verifysearch()[pri:0, instance:testscript.AdminTest@1aafa419] output={null}]]]>
+                <![CDATA[[TestResult name=verifyLogout status=SUCCESS method=HomeTest.verifyLogout()[pri:0, instance:testscript.HomeTest@2a4fb17b] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- driverQuit -->
-      </class> <!-- testscript.AdminTest -->
+      </class> <!-- testscript.HomeTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
