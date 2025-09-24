@@ -51,22 +51,13 @@ public void verifysearch() throws IOException {
 	login.clicksignin();
 	FakerUtility fakerUtility = new FakerUtility();
 	String randomname=fakerUtility.createRandomUserName();
-	
 	AdminPage admin = new AdminPage(driver);
 	admin.clickMoreInfo();
 	admin.userSearch();
-//	WebElement searchusername = driver.findElement(By.xpath("//input[@id='un']"));
-//	searchusername.sendKeys(randomname);
-	admin.searchByName(randomname);
-//	WebElement searchusertype = driver.findElement(By.xpath("//select[@name='ut']"));
-//	Select select = new Select(searchusertype);
-//	select.selectByVisibleText("Admin");
-	admin.searchUserType();
-//	WebElement searchuser = driver.findElement(By.xpath("//button[@name='Search']"));
-//	searchuser.click();
-	admin.searchUser();
-//	WebElement searchalert = driver.findElement(By.xpath("//button[@class='btn btn-block-sm btn-danger' and @name = 'Search']"));
-//	boolean isalertdisplayed = searchalert.isDisplayed();
+admin.searchByName(randomname);
+admin.searchUserType();
+admin.searchUser();
+
 	boolean isalertdisplayed= admin.searchAlert();
 	Assert.assertTrue(isalertdisplayed, "Search button is not displayed");
 	

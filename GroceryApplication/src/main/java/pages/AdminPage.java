@@ -14,11 +14,12 @@ this.driver = driver;
 
 @FindBy(xpath ="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin' and @class='small-box-footer']")WebElement adminmoreInfo;
 public void clickMoreInfo() {
-	WebElement adminmoreInfo = driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin' and @class='small-box-footer'] "));
+//	WebElement adminmoreInfo = driver.findElement(By.xpath("//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin' and @class='small-box-footer'] "));
 	adminmoreInfo.click();
 }
+@FindBy(xpath ="//a[@class='btn btn-rounded btn-danger']")WebElement newuser;
 public void addnewuser() {
-	WebElement newuser =driver.findElement(By.xpath("//a[@class='btn btn-rounded btn-danger']"));
+//	WebElement newuser =driver.findElement(By.xpath("//a[@class='btn btn-rounded btn-danger']"));
 	newuser.click();
 }
 public void addNewUsername(String randomname) {

@@ -17,10 +17,12 @@ public LoginPage(WebDriver driver) {
 	//	WebElement username = driver.findElement(By.xpath("//input[@class='form-control' and @name='username']"));
 		username.sendKeys(usernameValue);
 	}
+	@FindBy(xpath ="//input[@class='form-control' and @name='password']")WebElement password;
 	public void enterpassword(String passwordValue) {
-		WebElement password = driver.findElement(By.xpath("//input[@class='form-control' and @name='password']"));
+		//WebElement password = driver.findElement(By.xpath("//input[@class='form-control' and @name='password']"));
 		password.sendKeys(passwordValue);
 	}
+	@FindBy(xpath ="//button[text() ='Sign In']")WebElement signin;
 	public void clicksignin() {
 		WebElement signin = driver.findElement(By.xpath("//button[text() ='Sign In']"));
 		signin.click();

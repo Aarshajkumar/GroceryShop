@@ -15,8 +15,10 @@ public void loginclick() {
 	//WebElement loginclick= driver.findElement(By.xpath("//img[@src='https://groceryapp.uniqassosiates.com/public/assets/admin/dist/img/avatar5.png']"));
 	loginclick.click();
 }
+@FindBy(xpath ="//i[@class='ace-icon fa fa-power-off']")WebElement logoutclick;
+
 public void logoutclick() {
-	WebElement logoutclick = driver.findElement(By.xpath("//i[@class='ace-icon fa fa-power-off']"));
+	//WebElement logoutclick = driver.findElement(By.xpath("//i[@class='ace-icon fa fa-power-off']"));
 	logoutclick.click();
 }
 }
