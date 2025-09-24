@@ -46,12 +46,7 @@ public void verifyreturntohome() throws IOException {
 	signin.click();
 	WebElement newsmoreinfo = driver.findElement(By.xpath("//a[@class='small-box-footer'and @href ='https://groceryapp.uniqassosiates.com/admin/list-news']"));
 	newsmoreinfo.click();
-//	WebElement newmanageinfo = driver.findElement(By.xpath("//a[@class='btn btn-rounded btn-danger']"));
-//	newmanageinfo.click();
-//	WebElement textarea = driver.findElement(By.xpath("//textarea[@id='news']"));
-//	textarea.sendKeys("This is a sample news");
-//	WebElement savemanage = driver.findElement(By.xpath("//button[@name='create']"));
-//	savemanage.click();
+
 	WebElement homeclick =driver.findElement(By.xpath("//a[text()='Home']"));
 	homeclick.click();
 	String expected = "https://groceryapp.uniqassosiates.com/admin/home";

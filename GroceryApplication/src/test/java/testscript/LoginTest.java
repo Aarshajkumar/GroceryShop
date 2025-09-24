@@ -30,12 +30,10 @@ public void verifyvalidusernamevalidpassword() throws IOException {
 public void verifyvalidusernameinvalidpassword() throws IOException{
 	String usernameValue =ExcelUtility.getStringData(2, 0, "LoginPage");
 	String passwordValue =ExcelUtility.getStringData(2, 1, "LoginPage");
-	WebElement username = driver.findElement(By.xpath("//input[@class='form-control' and @name='username']"));
-	username.sendKeys(usernameValue);
-	WebElement password = driver.findElement(By.xpath("//input[@class='form-control' and @name='password']"));
-	password.sendKeys(passwordValue);
-	WebElement signin = driver.findElement(By.xpath("//button[text() ='Sign In']"));
-	signin.click();
+	LoginPage login = new LoginPage(driver);
+	login.enterusername(usernameValue);
+	login.enterpassword(passwordValue);
+	login.clicksignin();
 	String expected = "https://groceryapp.uniqassosiates.com/admin/login";
 	String actual = driver.getCurrentUrl();
 	Assert.assertEquals(actual, expected,"Login was successfull with validusername and invalidpassword");
@@ -44,12 +42,12 @@ public void verifyvalidusernameinvalidpassword() throws IOException{
 public void verifyinvalidusernamevalidpassword() throws IOException{
 	String usernameValue =ExcelUtility.getStringData(3, 0, "LoginPage");
 	String passwordValue =ExcelUtility.getStringData(3, 1, "LoginPage");
-	WebElement username = driver.findElement(By.xpath("//input[@class='form-control' and @name='username']"));
-	username.sendKeys(usernameValue);
-	WebElement password = driver.findElement(By.xpath("//input[@class='form-control' and @name='password']"));
-	password.sendKeys(passwordValue);
-	WebElement signin = driver.findElement(By.xpath("//button[text() ='Sign In']"));
-	signin.click();
+	LoginPage login = new LoginPage(driver);
+	
+	login.enterusername(usernameValue);
+	login.enterpassword(passwordValue);
+	login.clicksignin();
+	
 	String expected = "https://groceryapp.uniqassosiates.com/admin/login";
 	String actual = driver.getCurrentUrl();
 	Assert.assertEquals(actual, expected,"Login was successfull with invalidusername validpassword");
@@ -58,12 +56,10 @@ public void verifyinvalidusernamevalidpassword() throws IOException{
 public void verifyinvalidusernameinvalidpassword(String usernameValue,String passwordValue ) throws IOException{
 //	String usernameValue =ExcelUtility.getStringData(4, 0, "LoginPage");
 //	String passwordValue =ExcelUtility.getStringData(4, 1, "LoginPage");
-	WebElement username = driver.findElement(By.xpath("//input[@class='form-control' and @name='username']"));
-	username.sendKeys(usernameValue);
-	WebElement password = driver.findElement(By.xpath("//input[@class='form-control' and @name='password']"));
-	password.sendKeys(passwordValue);
-	WebElement signin = driver.findElement(By.xpath("//button[text() ='Sign In']"));
-	signin.click();
+	LoginPage login = new LoginPage(driver);
+	login.enterusername(usernameValue);
+	login.enterpassword(passwordValue);
+	login.clicksignin();
 	String expected = "https://groceryapp.uniqassosiates.com/admin/login";
 	String actual = driver.getCurrentUrl();
 	Assert.assertEquals(actual, expected,"Login was successfull with invalidusername invalidpassword");
