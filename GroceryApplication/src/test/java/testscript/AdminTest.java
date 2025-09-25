@@ -88,7 +88,7 @@ public void verifyreset() throws IOException {
 	admin.clickMoreInfo();
 	admin.addnewuser();
 	
-	admin.Reset();
+	admin.reset();
 //	WebElement resetassert = driver.findElement(By.xpath("//h4[@class='card-title' and text() ='Admin Users']"));
 	boolean isalertdisplayed = admin.resetAlert();
 	Assert.assertTrue(isalertdisplayed, "Admin User header is not displayed");
