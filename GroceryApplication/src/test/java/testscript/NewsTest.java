@@ -28,7 +28,7 @@ LoginPage login = new LoginPage(driver);
 	news.clickHome();
 //	WebElement textarea = driver.findElement(By.xpath("//textarea[@id='news']"));
 //	textarea.sendKeys("This is a sample news");
-	news.textarea();
+	news.textareafield();
 	WebElement savemanage = driver.findElement(By.xpath("//button[@name='create']"));
 	savemanage.click();
 	news.clickSave();
