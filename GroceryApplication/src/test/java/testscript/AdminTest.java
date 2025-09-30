@@ -9,6 +9,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.TestNGBase;
+import constant.Constants;
+import constant.Messages;
 import pages.AdminPage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
@@ -38,13 +40,14 @@ public class AdminTest extends TestNGBase {
 	admin.userSave();
 	
 	boolean isalertdisplayed = admin.newAlert();
-	Assert.assertTrue(isalertdisplayed, "New item is not added");
+	//Assert.assertTrue(isalertdisplayed, "New item is not added");
+Assert.assertTrue(isalertdisplayed,Messages.ADDUSER_ASSERT);
 }
 @Test
 
 public void verifysearch() throws IOException {
-	String usernameValue =ExcelUtility.getStringData(1, 0, "LoginPage");
-	String passwordValue =ExcelUtility.getStringData(1, 1, "LoginPage");
+	String usernameValue =ExcelUtility.getStringData(1, 0, Constants.LOGINSHEET);
+	String passwordValue =ExcelUtility.getStringData(1, 1, Constants.LOGINSHEET);
 	LoginPage login = new LoginPage(driver);
 	login.enterusername(usernameValue);
 	login.enterpassword(passwordValue);
@@ -59,13 +62,18 @@ admin.searchUserType();
 admin.searchUser();
 
 	boolean isalertdisplayed= admin.searchAlert();
-	Assert.assertTrue(isalertdisplayed, "Search button is not displayed");
+	//Assert.assertTrue(isalertdisplayed, "Search button is not displayed");
+	Assert.assertTrue(isalertdisplayed, Messages.SEARCH_ASSERT);
 	
 }
 @Test
 public void verifyreset() throws IOException {
-	String usernameValue =ExcelUtility.getStringData(1, 0, "LoginPage");
-	String passwordValue =ExcelUtility.getStringData(1, 1, "LoginPage");
+//	String usernameValue =ExcelUtility.getStringData(1, 0, "LoginPage");
+//	String passwordValue =ExcelUtility.getStringData(1, 1, "LoginPage");
+//	LoginPaginu we have created a constant in constants class that we are caliing below
+	//We have to replace every "LoginPage"with the constant we have created in every test cases.
+	String usernameValue =ExcelUtility.getStringData(1, 0, Constants.LOGINSHEET);
+	String passwordValue =ExcelUtility.getStringData(1, 1, Constants.LOGINSHEET);
 //	WebElement username = driver.findElement(By.xpath("//input[@class='form-control' and @name='username']"));
 //	username.sendKeys(usernameValue);
 //	WebElement password = driver.findElement(By.xpath("//input[@class='form-control' and @name='password']"));
@@ -93,7 +101,8 @@ public void verifyreset() throws IOException {
 
 	boolean isalertdisplayed = admin.resetAlert();
 	Assert.assertTrue(isalertdisplayed, "Admin User header is not displayed");
-//	Assert.assertTrue(resetassert.isDisplayed(),"Admin User header is not displayed");
+
+Assert.assertTrue(isalertdisplayed, Messages.RESET_ASSERT);
 }
 	
 

@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import constant.Constants;
 import utilities.PageUtility;
 import utilities.WaitUtility;
 
@@ -51,12 +52,14 @@ public void newUserType() {
 //	WebElement newusertype =driver.findElement(By.xpath("//select[@id='user_type']"));
 //	Select select = new Select(newusertype);
 //	select.selectByVisibleText("Admin");
-	page.selectDataWithVisibleText(newusertype, null);
+	page.selectDataWithVisibleText(newusertype,"Admin");
+	page.selectDataWithVisibleText(newusertype,Constants.ADMINUSER);
 }
 @FindBy(xpath ="//button[@name='Create']")WebElement usersave;
 public void userSave() {
 	//WebElement usersave = driver.findElement(By.xpath("//button[@name='Create']"));
 	//usersave.click();
+	//wait kodukumbo webelement variable anu kodukendathu after driver
 	wait.waitUntilClickable(driver, usersave);
 	page.clickOnElement(usersave);
 }
@@ -82,7 +85,8 @@ public void searchUserType() {
 	//WebElement searchusertype = driver.findElement(By.xpath("//select[@name='ut']"));
 //	Select select = new Select(searchusertype);
 //	select.selectByVisibleText("Admin");
-	page.selectDataWithVisibleText(searchusertype, null);
+//	page.selectDataWithVisibleText(searchusertype, "Admin");
+	page.selectDataWithVisibleText(searchusertype,Constants.ADMINUSER);
 }
 @FindBy(xpath ="//button[@name='Search']")WebElement searchuser;
 public void searchUser() {

@@ -8,6 +8,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import base.TestNGBase;
+import constant.Constants;
+import constant.Messages;
 import pages.LoginPage;
 import pages.NewsPage;
 import utilities.ExcelUtility;
@@ -15,8 +17,8 @@ import utilities.ExcelUtility;
 public class NewsTest extends TestNGBase {
 @Test(description = "verify adding new data in manaage news")
 public void veriftAddnews() throws IOException {
-	String usernameValue =ExcelUtility.getStringData(1, 0, "LoginPage");
-	String passwordValue =ExcelUtility.getStringData(1, 1, "LoginPage");
+	String usernameValue =ExcelUtility.getStringData(1, 0, Constants.LOGINSHEET);
+	String passwordValue =ExcelUtility.getStringData(1, 1, Constants.LOGINSHEET);
 LoginPage login = new LoginPage(driver);
 	
 	login.enterusername(usernameValue);
@@ -35,7 +37,8 @@ LoginPage login = new LoginPage(driver);
 	
 	//WebElement newsalert = driver.findElement(By.xpath("//div[@class='alert alert-success alert-dismissible']"));
 	boolean isalertdisplayed = news.newsAlert();
-	Assert.assertTrue(isalertdisplayed, "News is not added");
+//	Assert.assertTrue(isalertdisplayed, "News is not added");
+	Assert.assertTrue(isalertdisplayed, Messages.ADDNEWS_ASSERT);
 }
 @Test(description ="verify return to home from managenews")
 public void verifyreturntohome() throws IOException {
@@ -56,7 +59,7 @@ LoginPage login = new LoginPage(driver);
 //	homeclick.click();
 	String expected = "https://groceryapp.uniqassosiates.com/admin/home";
 	String actual = driver.getCurrentUrl();
-	Assert.assertEquals(actual, expected,"The page is not redirecting to the home page.");
+	Assert.assertEquals(actual, expected,Messages.RETURNHOME_ASSERT);
 	
 }
 }
