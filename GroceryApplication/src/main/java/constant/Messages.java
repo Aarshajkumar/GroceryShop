@@ -1,7 +1,5 @@
 package constant;
 
-import org.apache.xmlbeans.impl.xb.xsdschema.Public;
-
 public class Messages {
 public static final String VALIDLOGIN_ASSERT="Login is not successfull with valid credentials";
 public static final String INVALIDPASSWORD_ASSERT="Login was successfull with validusername and invalidpassword";

@@ -52,7 +52,7 @@ public void newUserType() {
 //	WebElement newusertype =driver.findElement(By.xpath("//select[@id='user_type']"));
 //	Select select = new Select(newusertype);
 //	select.selectByVisibleText("Admin");
-	page.selectDataWithVisibleText(newusertype,"Admin");
+	//page.selectDataWithVisibleText(newusertype,"Admin");
 	page.selectDataWithVisibleText(newusertype,Constants.ADMINUSER);
 }
 @FindBy(xpath ="//button[@name='Create']")WebElement usersave;
