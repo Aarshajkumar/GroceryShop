@@ -15,6 +15,7 @@ import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class HomeTest extends TestNGBase {
+	HomePage home;
 @Test(description = "verify Logout")
 	public void verifyLogout() throws IOException {
 //	String usernameValue =ExcelUtility.getStringData(1, 0, "LoginPage");
@@ -24,12 +25,12 @@ public class HomeTest extends TestNGBase {
 		String usernameValue =ExcelUtility.getStringData(1, 0, Constants.LOGINSHEET);
 		String passwordValue =ExcelUtility.getStringData(1, 1, Constants.LOGINSHEET);
 		LoginPage login = new LoginPage(driver);
-		login.enterusername(usernameValue);
-		login.enterpassword(passwordValue);
-		login.clicksignin();
-		HomePage home = new HomePage(driver);
-		home.loginclick();
-		home.logoutclick();
+		login.enterusername(usernameValue).enterpassword(passwordValue);
+//		login.enterpassword(passwordValue);
+	home =	login.clicksignin();
+	//	HomePage home = new HomePage(driver);
+		home.adminclicks();
+	login=	home.logoutclicks();
 		String expected = "https://groceryapp.uniqassosiates.com/admin/login";
 		String actual = driver.getCurrentUrl();
 	//	Assert.assertEquals(actual, expected,"Logout is not successfull");

@@ -14,7 +14,6 @@
           <include name="verifyinvalidusernamevalidpassword"/>
           <include name="browserInitialization"/>
           <include name="verifyvalidusernamevalidpassword"/>
-          <include name="browserQuitClose"/>
         </methods>
       </class> <!-- testscript.LoginTest -->
     </classes>
@@ -25,10 +24,8 @@
       <class name="testscript.LoginTest">
         <methods>
           <include name="driverQuit"/>
-          <include name="verifyinvalidusernamevalidpassword"/>
           <include name="browserInitialization"/>
           <include name="verifyvalidusernamevalidpassword"/>
-          <include name="browserQuitClose"/>
         </methods>
       </class> <!-- testscript.LoginTest -->
     </classes>

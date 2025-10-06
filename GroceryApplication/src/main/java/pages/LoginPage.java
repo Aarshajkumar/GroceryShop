@@ -18,23 +18,26 @@ public LoginPage(WebDriver driver) {
 	PageFactory.initElements(driver, this);
 }
   @FindBy(xpath ="//input[@class='form-control' and @name='username']")WebElement username;
-	public void enterusername(String usernameValue ) {
+	public LoginPage enterusername(String usernameValue ) {
 	//	WebElement username = driver.findElement(By.xpath("//input[@class='form-control' and @name='username']"));
 	//	username.sendKeys(usernameValue);
 		page.sendDataToElement(username, usernameValue);
+		return this;
 	}
 	
 	@FindBy(xpath ="//input[@class='form-control' and @name='password']")WebElement password;
-	public void enterpassword(String passwordValue) {
+	public LoginPage enterpassword(String passwordValue) {
 		//WebElement password = driver.findElement(By.xpath("//input[@class='form-control' and @name='password']"));
 		page.sendDataToElement(password, passwordValue);
+		return this;
 	}
 	@FindBy(xpath ="//button[text() ='Sign In']")WebElement signin;
-	public void clicksignin() {
+	public HomePage clicksignin() {
 		//WebElement signin = driver.findElement(By.xpath("//button[text() ='Sign In']"));
 	//	signin.click();
 		wait.waitUntilClickable(driver, signin);
 		page.clickOnElement(signin);
+		return new HomePage(driver);
 		
 	}
 	

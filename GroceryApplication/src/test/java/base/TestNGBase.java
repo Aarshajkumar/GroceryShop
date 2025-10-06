@@ -15,6 +15,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+
 import org.testng.annotations.Parameters;
 
 import constant.Constants;
@@ -26,7 +27,8 @@ public class TestNGBase {
 	public WebDriver driver ;
 	@BeforeMethod(alwaysRun = true)
 	@Parameters("browser")
-	public void browserInitialization(String browser) throws Exception {
+
+		public void browserInitialization(String browser) throws Exception {
 		// driver = new ChromeDriver(); //webdriver interface chromedriver class driver ref variable
 		prop=new Properties();
 		f = new FileInputStream(Constants.CONFIGFILE);
@@ -55,13 +57,13 @@ public class TestNGBase {
 		
 	}
 	
-  @AfterMethod
-	public void browserQuitClose() {
+//  @AfterMethod
+//	public void browserQuitClose() {
 	
 //		driver.close();
 //		driver.quit();
 	
-	}
+	
   //ethelum fail aya ellam interupt avan chance ondu
   @AfterMethod(alwaysRun = true)//terminate avunenu mune exevute cheyna vendi anu always 
 	public void driverQuit(ITestResult iTestResult) throws IOException
@@ -71,7 +73,7 @@ public class TestNGBase {
 			ScreenshotUtility screenShot=new ScreenshotUtility();
 			screenShot.getScreenshot(driver, iTestResult.getName());
 		}
-	//	driver.quit();
+
 
 	}
 	

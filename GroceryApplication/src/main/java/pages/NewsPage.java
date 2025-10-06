@@ -17,30 +17,35 @@ public NewsPage(WebDriver driver) {
 	this.driver = driver;
 	PageFactory.initElements(driver, this);
 }
-@FindBy(xpath ="//a[@class='small-box-footer'and @href ='https://groceryapp.uniqassosiates.com/admin/list-news']")WebElement newsmoreinfo;
-public void manageNewsMoreInfo() {
-//	WebElement newsmoreinfo = driver.findElement(By.xpath("//a[@class='small-box-footer'and @href ='https://groceryapp.uniqassosiates.com/admin/list-news']"));
-	//newsmoreinfo.click();
-	page.clickOnElement(newsmoreinfo);
+
+@FindBy(xpath="//a[@class='btn btn-rounded btn-danger']")WebElement clickknews;
+public NewsPage  clicknewnews() {
+	wait.waitUntilClickable(driver, clickknews);
+	clickknews.click();
+	return this;
 }
 @FindBy(xpath ="//a[text()='Home']")WebElement homeclick;
-public void clickHome() {
+public HomePage clickHome() {
 //	WebElement homeclick =driver.findElement(By.xpath("//a[text()='Home']"));
 	//homeclick.click();
-	wait.waitUntilClickable(driver, homeclick);
+//	wait.waitUntilClickable(driver, homeclick);
 	page.clickOnElement(homeclick);
+	return new HomePage(driver);
 }
 @FindBy(xpath ="//textarea[@id='news']")WebElement textarea;
-public void textareafield() {
+public NewsPage textareafield() {
 	//WebElement textarea = driver.findElement(By.xpath("//textarea[@id='news']"));
 	//textarea.sendKeys("This is a sample news");
 	page.sendDataToElement(textarea, "This is a sample news");
+	return this;
+	
 }
 @FindBy(xpath ="//button[@name='create']")WebElement savemanage;
-public void clickSave() {
+public NewsPage clickSave() {
 	//WebElement savemanage = driver.findElement(By.xpath("//button[@name='create']"));
 	//savemanage.click();
 	page.clickOnElement(savemanage);
+	return this;
 }
 @FindBy(xpath ="//div[@class='alert alert-success alert-dismissible']")WebElement newsalert;
 public boolean newsAlert() {

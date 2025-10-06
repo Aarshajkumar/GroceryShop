@@ -5,20 +5,31 @@
     <listener class-name="reportgeneration.Listener"/>
   </listeners>
   <test thread-count="5" name="Test(failed)">
+    <parameter name="browser" value="chrome"/>
     <classes>
       <class name="testscript.AdminTest">
         <methods>
           <include name="driverQuit"/>
+          <include name="verifyadduser"/>
           <include name="browserInitialization"/>
           <include name="verifysearch"/>
-          <include name="browserQuitClose"/>
+          <include name="verifyreset"/>
         </methods>
       </class> <!-- testscript.AdminTest -->
+      <class name="testscript.LoginTest">
+        <methods>
+          <include name="driverQuit"/>
+          <include name="verifyvalidusernameinvalidpassword"/>
+          <include name="verifyinvalidusernamevalidpassword"/>
+          <include name="browserInitialization"/>
+          <include name="verifyinvalidusernameinvalidpassword"/>
+          <include name="verifyvalidusernamevalidpassword"/>
+        </methods>
+      </class> <!-- testscript.LoginTest -->
       <class name="testscript.HomeTest">
         <methods>
           <include name="driverQuit"/>
           <include name="browserInitialization"/>
-          <include name="browserQuitClose"/>
           <include name="verifyLogout"/>
         </methods>
       </class> <!-- testscript.HomeTest -->
@@ -26,8 +37,8 @@
         <methods>
           <include name="driverQuit"/>
           <include name="browserInitialization"/>
+          <include name="verifyreturntohome"/>
           <include name="veriftAddnews"/>
-          <include name="browserQuitClose"/>
         </methods>
       </class> <!-- testscript.NewsTest -->
     </classes>

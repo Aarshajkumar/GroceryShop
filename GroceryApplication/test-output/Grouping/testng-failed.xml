@@ -11,6 +11,7 @@
       <class name="testscript.LoginTest">
         <methods>
           <include name="driverQuit"/>
+          <include name="browserInitialization"/>
           <include name="verifyvalidusernamevalidpassword"/>
         </methods>
       </class> <!-- testscript.LoginTest -->
