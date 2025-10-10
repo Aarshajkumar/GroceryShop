@@ -45,8 +45,8 @@ LoginPage login = new LoginPage(driver);
 }
 @Test(description ="verify return to home from managenews")
 public void verifyreturntohome() throws IOException {
-	String usernameValue =ExcelUtility.getStringData(1, 0, "LoginPage");
-	String passwordValue =ExcelUtility.getStringData(1, 1, "LoginPage");
+	String usernameValue =ExcelUtility.getStringData(1, 0, Constants.LOGINSHEET);
+	String passwordValue =ExcelUtility.getStringData(1, 1, Constants.LOGINSHEET);
 LoginPage login = new LoginPage(driver);
 	
 	login.enterusername(usernameValue).enterpassword(passwordValue);

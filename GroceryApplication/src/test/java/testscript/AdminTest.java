@@ -22,8 +22,8 @@ public class AdminTest extends TestNGBase {
 	AdminPage admin;
 @Test
 	public void verifyadduser() throws IOException {
-	String usernameValue =ExcelUtility.getStringData(1, 0, "LoginPage");
-	String passwordValue =ExcelUtility.getStringData(1, 1, "LoginPage");
+	String usernameValue =ExcelUtility.getStringData(1, 0,Constants.LOGINSHEET);
+	String passwordValue =ExcelUtility.getStringData(1, 1, Constants.LOGINSHEET);
 	LoginPage login = new LoginPage(driver);
 	login.enterusername(usernameValue).enterpassword(passwordValue);
 	//login.enterpassword(passwordValue);
